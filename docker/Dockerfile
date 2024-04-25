@@ -1,5 +1,5 @@
 FROM amazoncorretto:17-alpine-jdk
-EXPOSE 8070
+EXPOSE 8080
 RUN adduser -D aosei
 USER aosei
 ADD target/crud-0.0.1-SNAPSHOT.jar crud-0.0.1-SNAPSHOT.jar
