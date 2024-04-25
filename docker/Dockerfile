@@ -1,4 +1,5 @@
 FROM amazoncorretto:17-alpine-jdk
+EXPOSE 9090
 VOLUME /tmp
 RUN adduser -D aosei
 USER aosei
