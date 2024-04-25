@@ -1,4 +1,5 @@
-FROM 17-alpine-jdk
+FROM amazoncorretto:17-alpine-jdk
+VOLUME /tmp
 RUN docker -S nonroot \
     && ec2-user -S nonroot -G nonroot
 USER nonroot
