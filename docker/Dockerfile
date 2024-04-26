@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine-jdk
+FROM openjdk:17-oracle
 EXPOSE 8080
 RUN adduser -D aosei
 USER aosei
