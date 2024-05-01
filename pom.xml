@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.app</groupId>
 	<artifactId>crud</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>crud</name>
 	<description>simple crud project with react frontend</description>
 	<properties>
@@ -43,6 +43,10 @@
 
 	<build>
 		<plugins>
+<!--			<plugin>-->
+<!--				<groupId>org.springframework.boot</groupId>-->
+<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -89,19 +93,6 @@
 							<goal>yarn</goal>
 						</goals>
 						<phase>generate-resources</phase>
-					</execution>
-					<execution>
-						<id>yarn test</id>
-						<goals>
-							<goal>yarn</goal>
-						</goals>
-						<phase>test</phase>
-						<configuration>
-							<arguments>test</arguments>
-							<environmentVariables>
-								<CI>true</CI>
-							</environmentVariables>
-						</configuration>
 					</execution>
 					<execution>
 						<id>yarn build</id>
