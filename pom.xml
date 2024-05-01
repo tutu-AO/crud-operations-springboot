@@ -102,6 +102,9 @@
 						<phase>compile</phase>
 						<configuration>
 							<arguments>build</arguments>
+							<environmentVariables>
+								<CI>false</CI>
+							</environmentVariables>
 						</configuration>
 					</execution>
 				</executions>
