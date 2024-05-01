@@ -1,9 +1,5 @@
 package com.app.crud.entity;
 
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
-//import jakarta.persistence.GenerationType;
-//import jakarta.persistence.Id;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,7 +13,7 @@ public class Employee {
     @Transient
     public static final String SEQUENCE_NAME = "users_sequence";
     @Id
-//    @GeneratedValue(strategy= GenerationType.IDENTITY) /**Auto generation of id to each employee*/
+
     private Long employeeId;
     private String firstName;
     private String lastName;

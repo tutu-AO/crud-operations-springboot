@@ -9,26 +9,27 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
+@RequestMapping("/api")
 public class EmployeeController {
     @Autowired
     private SequenceGeneratorService sequenceGenerator;
     @Autowired
     private EmployeeRepository employeeRepository;
-    @GetMapping("/employees")
+    @GetMapping
     public List<Employee> getEmployees(){
         return employeeRepository.findAll();
     }
-    @GetMapping("/employees/{id}")
+    @GetMapping("/{id}")
     public Employee getEmployee(@PathVariable Long id){
         return employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
     }
-    @PostMapping("/employees")
+    @PostMapping
     public List<Employee> addEmployee(@RequestBody Employee employee){
         employee.setEmployeeId(sequenceGenerator.generateSequence(Employee.SEQUENCE_NAME));
         employeeRepository.save(employee);
         return employeeRepository.findAll();
     }
-    @PutMapping("/employees/{id}")
+    @PutMapping("/{id}")
     public Employee updateEmployee(@RequestBody Employee theEmployee, @PathVariable Long id){
         return employeeRepository.findById(id).map(
                 employee -> {
@@ -42,7 +43,7 @@ public class EmployeeController {
                     return employeeRepository.save(theEmployee);
         });
     }
-    @DeleteMapping("/employees/{id}")
+    @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable Long id){
         employeeRepository.deleteById(id);
     }

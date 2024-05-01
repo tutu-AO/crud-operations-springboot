@@ -17,7 +17,7 @@ function MainEdit(){
 
     useEffect(() => {
         if(id !== 'new'){
-            fetch(`/employees/${id}`)
+            fetch(`api/${id}`)
             .then(response => response.json())
             .then(data => setEmployees(data))
         }
@@ -31,7 +31,7 @@ function MainEdit(){
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await fetch(`/employees${employees.employeeId ? `/${employees.employeeId}` : ''}`, {
+        await fetch(`/api${employees.employeeId ? `/${employees.employeeId}` : ''}`, {
             method: (employees.employeeId) ? 'PUT' : 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -40,7 +40,7 @@ function MainEdit(){
             body: JSON.stringify(employees),
         });
         setEmployees(formState);
-        history.push('/employees');
+        history.push('/');
     }
     const title = <h2>{employees.employeeId ? 'Edit Employee' : 'Add Employee'}</h2>;
 
@@ -75,7 +75,7 @@ function MainEdit(){
               </div>
               <FormGroup>
                 <Button outline color="primary" type="submit">Save</Button>{' '}
-                <Button outline color="secondary" tag={Link} to="/employees">Cancel</Button>
+                <Button outline color="secondary" tag={Link} to="/">Cancel</Button>
               </FormGroup>
             </Form>
           </Container>
