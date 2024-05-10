@@ -1,6 +1,9 @@
 # CRUD Operations Implementation
 CRUD is the acronym for CREATE, READ, UPDATE and DELETE. These functions describe the four essential operations for creating and managing persistent data elements, mainly in relational and NoSQL databases.
 
+The CREATE(Add Employee) operation adds a new record to a database. The READ operation can return all records and some or all fields.
+The UPDATE(Edit) is used to modify existing records in the database. The DELETE operations allow the user to remove records from the database.
+
 ## Home Page
 ![Screenshot 2024-05-09 at 9 05 10 PM](https://github.com/tutu-AO/crud-operations-springboot/assets/98568883/8e168567-3fdd-46a8-bbc9-4637e83b5ed1)
 
