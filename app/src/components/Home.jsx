@@ -2,6 +2,7 @@ import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import React, {useEffect, useState, useReducer} from 'react';
 import { Link } from 'react-router-dom';
 import Nav from "./Nav";
+import AppFooter from "./Footer";
 
 function Home(){
     const[employees, setEmployees] = useState([]);
@@ -64,6 +65,7 @@ function Home(){
                     {empList}
                     </tbody>
                 </Table>
+                <AppFooter/>
             </Container>
         </div>
     );
